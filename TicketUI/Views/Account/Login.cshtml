@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<h2>Giriş Yap</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div style="color:red">@ViewBag.Error</div>
+}
+
+<form method="post">
+    <label>E-posta:</label>
+    <input type="email" name="email" required /><br>
+    <label>Şifre:</label>
+    <input type="password" name="password" required /><br>
+    <button type="submit">Giriş</button>
+</form>
