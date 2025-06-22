@@ -26,6 +26,11 @@ namespace TicketSistemi.Data
                 new Role { Id = 3, Name = "Takım Lideri" },
                 new Role { Id = 4, Name = "Müşteri" }
             );
+            modelBuilder.Entity<User>().HasData(
+                new User { Id = 1, FullName = "Elif", Email = "musteri@gmail.com", PasswordHash = "1234", RoleId = 3 },
+                new User { Id = 2, FullName = "Ayşe", Email = "personel@gmail.com", PasswordHash = "1234", RoleId = 2 },
+                new User { Id = 3, FullName = "Admin", Email = "admin@gmail.com", PasswordHash = "1234", RoleId = 1 }
+            );
 
             modelBuilder.Entity<TicketComment>()
                 .HasOne(tc => tc.CreatedBy)
@@ -54,5 +59,6 @@ namespace TicketSistemi.Data
             base.OnModelCreating(modelBuilder);
 
         }
+
     }
 }

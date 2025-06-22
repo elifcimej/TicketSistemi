@@ -20,11 +20,9 @@ public class AuthController : ControllerBase
         _config = config;
     }
 
-    // Kayıt
     [HttpPost("register")]
     public IActionResult Register([FromBody] User user)
     {
-        // Şifreyi hash'le (basitçe, gerçek projede daha güvenli yap!)
         if (_context.Users.Any(x => x.Email == user.Email))
             return BadRequest("Bu email adresine ait hesap zaten mevcut!");
         user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
@@ -33,7 +31,6 @@ public class AuthController : ControllerBase
         return Ok("Kullanıcı kaydedildi.");
     }
 
-    // Giriş (login)
     [HttpPost("login")]
     public IActionResult Login([FromBody] User login)
     {

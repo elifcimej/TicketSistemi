@@ -2,12 +2,12 @@
 {
     public enum TicketStatus
     {
-        Yeni = 0,
-        YanıtBekleniyor = 1,
-        İşlemde = 2,
-        Tamamlandı = 3,
-        MusteriOnayiBekleniyor = 4,
-        Kapatildi = 5,
-        YenidenAcildi = 6
+        Yeni,
+        YanıtBekleniyor,
+        Islemde,
+        Tamamlandi,
+        MusteriOnayiBekleniyor,
+        Kapatildi,
+        YenidenAcildi
     }
 }
